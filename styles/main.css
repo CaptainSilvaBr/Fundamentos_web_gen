@@ -1,0 +1,686 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: #fff;
+  --colorPrimary: #483C67;
+  --colorSecundary: rgb(26, 18, 59);
+  --colorTertiary: rgb(88, 68, 167);
+  --colorDetails: #E96379;
+  --colorNac: #666;
+  --colorFocus: rgb(245, 147, 36);
+  --colorShadow: rgba(6, 6, 6, 0.1);
+  --widthRatting: 75;
+}
+
+body {
+
+  display: flex;
+  flex-direction: column;
+  font:400 16px 'Roboto', sans-serif;
+  justify-content: space-between;
+  min-height: 100vh;
+
+}
+
+
+
+a {
+  color: var(--colorPrimary);
+}
+
+a:hover,
+a:focus {
+  color: var(--white);
+  background-color: var(--colorPrimary);
+  text-decoration: none;
+}
+
+
+a.alert {
+  color: var(--colorPrimary);
+  background-color: yellow;
+  display: block;
+  padding: 10px 10px;
+  /* referência de suporte ao valor sticky em caniuse.com/css-sticky  */
+  position: -webkit-sticky; 
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+}
+
+
+.testEvent {
+  color: var(--colorPrimary);
+  cursor: pointer;
+  background-color: yellow;
+  border-radius: 8px;
+  display: block;
+  max-width: 62%;
+  padding: 15px 20px;
+}
+
+.testEventClickOn {
+  background-color: var(--colorSecundary);
+  color:  var(--white);
+}
+
+.testEvent a { 
+  display: inline-block;
+  padding: 1px 6px;
+  margin: 0 6px }
+
+a.alert,
+a.alert:focus {
+  text-decoration: underline;
+}
+
+a.alert:hover {
+  text-decoration: none;
+}
+
+article {
+  padding-right: 40px;
+  position: relative; /* dependencia */
+}
+
+article a img { 
+  width: 150px;
+  transform: translate(-10px, -15px);
+}
+
+article a { 
+  background-color: var(--white);
+  color: var(--colorPrimary);
+}
+
+
+article a.githubpages {
+  
+  align-items: center;
+  background-color: var(--colorPrimary);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  color: var(--white);
+  text-decoration: none;
+  display: flex;
+  height: 110px;
+  width: 510px;
+  text-indent: 25px;
+  margin: 50px 0 30px;
+  transition: background-color ease-in-out .2s;
+}
+
+article a.githubpages:hover {
+  background-color: var(--colorTertiary);
+}
+
+
+article h1 {
+  margin-bottom: 28px;
+}
+
+article p {
+  line-height: 28px;
+  margin-bottom: 28px;
+}
+
+
+
+aside {
+  padding: 2px 0 0 50px;
+  border-left: 1px solid rgba(133, 133, 133, .4);
+  min-width: 350px;
+}
+
+aside ul { 
+  margin: 8px 0 28px;  
+
+}
+aside ul a {
+  display: block;
+  padding: 8px;
+}
+
+aside blockquote {
+
+  color: #fff;
+  min-height: 140px;
+  max-width: 250px;
+  padding: 18px 19px;
+  background: var(--colorDetails) url(../images/bgCards.png) -20px -48px no-repeat;
+  position: relative; /* dependência */
+  z-index: 19;
+  transition: transform ease-out .277s;
+  cursor: pointer;
+}
+
+aside blockquote:hover {
+  z-index: 20;
+  transform: scale(109%);
+}
+
+aside blockquote span {
+  
+  font-style: oblique;
+  position: absolute;
+  bottom: 55px;
+  right: 18px;
+
+}
+
+aside h2.featured {
+
+  position: relative;
+  left: -75px;
+  padding: 8px 9px;
+  background: var(--white);
+  color:var(--colorDetails);
+
+}
+
+aside blockquote span::before {
+  content: "- ";
+}
+
+aside blockquote:nth-child(even) {
+  background: var(--colorPrimary) url(../images/bgCards.png) -20px -48px no-repeat;
+}
+
+aside blockquote:nth-of-type(1) {
+  left: -75px;
+}
+
+aside blockquote:nth-of-type(2) {
+  left: -55px;
+  top: -45px
+}
+
+aside blockquote:nth-of-type(3) {
+  left: -35px;
+  top: -85px
+}
+
+aside blockquote:nth-of-type(4) {
+  left: -15px;
+  top: -125px
+}
+
+
+
+figure {
+
+  transform: translateY(-50px);
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+
+}
+
+header {
+  
+  background: var(--colorPrimary) url(../images/header.jpg) no-repeat;
+  background-size: 50%;
+  letter-spacing: -1px;
+
+}
+
+header div {
+  color: #fff;
+  display: flex;
+  height: 150px;
+  justify-content: space-between;
+}
+
+header div a:hover {
+  background-color: initial;
+}
+
+header .logo {
+  height: 9.2rem;
+  transform: translate(75px, 24px);
+  width: 9.2rem;
+}
+
+
+header p {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 52px;
+  transform: translateY(24px);
+  width: 50vw;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.2);
+}
+
+header p span {
+  text-shadow: initial;
+  font-size: 4rem;
+}
+
+div.content {
+  display: flex;
+  min-height: 40vh;
+  padding: 35px 55px;
+  justify-content: space-between;
+}
+
+
+header nav {
+  align-content: flex-end;
+  background-color: var(--colorSecundary);
+  box-shadow: 0 -1px 1px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+header nav a {
+  color: var(--colorDetails);
+  text-decoration: none;
+  display: block;
+  padding: 20px 0;
+  flex-grow: 1;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background-color ease-in-out .277s;
+}
+
+nav.breadcrumb {
+  padding: 30px 55px 0;
+  color: var(--linkNav);
+
+}
+
+ul {
+  list-style: none;
+}
+
+
+footer {
+  background-color: var(--colorPrimary);
+  display: flex;
+  justify-content: space-between;
+}
+
+footer * { 
+  color: #fff;
+  font-size: .9rem;
+  padding-top: 14px;
+}
+
+footer p {
+  line-height: 1.1rem;
+}
+
+footer p, footer cite { 
+  padding:20px;
+}
+
+footer cite { 
+  color: var(--colorDetails);
+  align-self: flex-end;
+}
+footer cite { 
+  display: flex;
+  
+  align-items: flex-end
+}
+
+footer p a { 
+  padding: 0;
+}
+
+footer p a:hover { 
+  background: none;
+}
+
+
+
+
+footer a#whatsapp {
+  background: none;
+  bottom: 37px;
+  position: fixed;
+  right: 20px;
+  width: 80px;
+  z-index: 9;
+}
+
+footer a#whatsapp:hover {
+  background: initial;
+}
+
+footer a#whatsapp img {
+  max-width: 100%;
+  transition: transform ease-in .277s;
+}
+
+footer a#whatsapp:hover img {
+  transform: scale(90%);
+}
+
+
+div.video {
+  
+  max-width: 100%;
+  height: 140px;
+  overflow: hidden;
+  
+
+}
+
+video {
+ 
+  width: 100vw;
+  transform: translateY(-170px) ;
+
+}
+
+
+form#contact {
+  
+  display: flex;
+  flex-direction: column;
+  padding: 0 120px 40px 0;
+
+  
+}
+
+form#contact button {
+  
+  background-color: var(--colorPrimary);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.4rem;
+  margin-top: 54px;
+  padding: 20px 15px;
+  width: 100%;
+  transition: all ease-in .3s;
+
+}
+
+form#contact button:hover {
+  cursor: pointer;
+  background-color: var(--colorDetails);
+  
+}
+
+form#contact fieldset {
+  
+  display: flex;
+  flex-direction: column; 
+  border: 0;
+  padding-top: 25px;
+  
+}
+
+form#contact fieldset:first-of-type label {
+  margin-top: 18px;
+}
+
+form#contact fieldset.technologies {
+
+  margin-top: 64px;
+  border: 1px solid #ccc;
+  padding: 0 50px 64px;
+
+}
+
+form#contact fieldset.technologies label {
+  font-size: 1.02rem;
+  text-indent: 11px;
+}
+
+form#contact fieldset.technologies legend {
+  padding: 0 15px;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+form#contact p {
+  font:800 1.4rem 'Roboto', sans-serif;
+}
+
+form#contact input {
+  border: none;
+  border-bottom: 1px solid #ccc ;
+  font-size: 1.2rem;
+  padding: 8px;
+}
+
+form#contact input[type="range"] {
+  cursor: pointer;  
+}
+
+
+form#contact select {
+  font-size: 1rem;
+  padding: 9px 9px;
+  border: 1px solid rgba(133, 133, 133, .4)
+}
+
+form#contact select option {
+  cursor: pointer;
+  padding: 3px;
+
+}
+
+form#contact textarea {
+  border: 1px solid #ccc ;
+  font-size: 1.1rem;
+  height: 120px;
+  margin-top: 13px;
+  padding: 8px;
+}
+
+form#contact textarea:focus {
+  box-shadow:  2px 2px 2px 2px var(--colorShadow);
+}
+
+
+form#contact input,
+form#contact textarea {
+  transition: border 0.8s ease;
+}
+
+form#contact input:focus {
+  border-bottom: 1px solid var(--colorFocus);
+  outline: none;
+}
+
+form#contact textarea:focus {
+  border: 1px solid var(--colorFocus);
+  outline: none;
+}
+
+form#contact label
+{
+  line-height: 28px;
+  padding: 6px 0;
+  margin-top: 40px;
+}
+
+form#contact label span[class] {
+  font-style: italic;
+}
+
+form#contact label span:not([class]) {
+  cursor: pointer;
+}
+
+form#contact label input[type="checkbox"],
+form#contact label input[type="number"]
+{
+  margin-left: 9px;
+}
+
+form#contact label input[type="number"] {
+  border: 1px solid #666;
+  max-width: 60px;
+}
+
+
+#peopleTalking {
+ 
+  display: block;
+  background: url(../images/peopleTalkingEdit.png) no-repeat;
+  position: absolute;
+  width: 94px;
+  height: 267px;
+  top: 460px;
+  right: 49px;
+  z-index: 8;
+
+}
+
+.ratting {
+  display: block;
+  height: 30px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: url(../images/ratting.png) repeat-x;
+  background-size: 20px;
+}
+
+.ratting-x3 {
+  width: 3.60rem
+}
+
+.ratting-x4 {
+  
+  width: 4.88rem
+}
+
+
+
+/*
+  
+essa não é uma abordagem mobile first
+ 
+*/
+
+
+@media screen and (max-width: 480px) {  
+ 
+  header .logo {
+    height: 3.8rem;
+    width: 3.8rem;
+    transform: translate(15px, 24px);
+  }
+ 
+
+  header {
+    background-size: 137%;
+  }
+
+
+  div.content {
+    flex-direction: column;
+  }
+
+  aside {
+    padding: 0;
+    border-left: none;
+    min-width: auto;
+  }
+
+  aside h2.featured {
+    left: 0;
+  }
+
+  .content aside blockquote {
+    left: 0
+  }
+
+  #peopleTalking {
+ 
+    display: none;
+   
+  }
+
+
+  article a.githubpages {
+   width: 117%;
+   text-indent: -26px;
+   font-size: .945rem;
+   }
+
+   article a img { 
+    width: 9.7rem;
+
+  }
+
+  footer {
+    flex-direction: column;
+    height: auto;
+  }
+
+  footer cite {
+    background: var(--colorSecundary);
+  }
+
+  footer > * { 
+    text-indent: 0;
+    padding: 10px
+  }
+
+
+  footer a#whatsapp {
+   z-index: 19;
+   width: 4.5rem;
+  }
+
+  header nav {
+   flex-direction: column;
+  }
+
+  video {
+     width: 100%; /* seria melhor vw */
+     transform: none;
+  }
+
+
+  header p {
+    font-size: 3rem;
+    line-height: 32px;
+    transform: translate(-77px, 24px);
+
+  }
+
+  header p span {
+    font-size: 2rem;
+  }
+
+  figure img {
+    max-width: 100%;
+    margin-top: 36px;
+  }
+
+  figure {
+
+    border: none
+  }
+
+  .ratting {
+
+   position: static;
+
+  }
+
+  form#contact input {
+    max-width: 70%;
+  }
+
+  .testEvent { 
+    max-width: 500px;
+  }
+
+} 
